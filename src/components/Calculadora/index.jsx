@@ -20,9 +20,10 @@ class Calculadora extends React.Component {
     }
   
     handleSubmit(event) {
-    this.state.juros = (this.state.valor * (2,59/100))
-    console.log(this.state.juros);
-      this.setState({ resultado:  (parseFloat(this.state.juros) / parseInt(this.state.parcelas) )})
+    this.state.juros = (this.state.valor / this.state.parcelas); 
+    console.log(this.state.juros); 
+    
+      this.setState({ resultado: this.state.juros * 1.0259 })
       event.preventDefault();
     }
   
